@@ -1,2 +1,2 @@
 # codility-javascript
-My solutions to the codility lessons in JavaScript
+Solutions to the codility lessons
