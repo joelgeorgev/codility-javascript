@@ -8,13 +8,12 @@ solution = (n) => {
     solution = 0
   }
   else {
-    const positions = numbers
-      .map((value, iter) => {
-        if (value === '1') {
-          return iter
-        }
-      })
-      .filter(value => value !== undefined)
+    const positions = numbers.reduce((acc, value, iter) => {
+      if (value === '1') {
+        acc.push(iter)
+      }
+      return acc
+    }, [])
     if (positions.length === 1) {
       solution = 0
     } else {
