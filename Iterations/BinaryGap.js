@@ -30,3 +30,5 @@ solution = (n) => {
 }
 
 solution(1162)
+
+// 100%
