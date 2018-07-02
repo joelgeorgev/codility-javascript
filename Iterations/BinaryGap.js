@@ -1,11 +1,11 @@
 solution = (n) => {
-  let result
+  let solution
   console.log('Input: ' + n)
   const binary = n.toString(2)
   console.log('Binary Representation: ' + binary)
   const numbers = binary.split('')
   if (!numbers.filter(number => number === '0').length || !numbers.filter(number => number === '1').length) {
-    result = 0;
+    solution = 0
   }
   else {
     const positions = numbers
@@ -16,9 +16,9 @@ solution = (n) => {
       })
       .filter(value => value !== undefined)
     if (positions.length === 1) {
-      result = 0
+      solution = 0
     } else {
-      result = positions.reduce((acc, value, iter, array) => {
+      solution = positions.reduce((acc, value, iter, array) => {
         if (iter && value - array[iter - 1] > acc) {
           acc = value - array[iter - 1]
         }
@@ -26,7 +26,7 @@ solution = (n) => {
       }, 0) - 1
     }
   }
-  console.log('Solution: ' + result)
+  console.log('Solution: ' + solution)
 }
 
 solution(1162)
