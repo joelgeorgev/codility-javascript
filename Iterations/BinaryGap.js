@@ -1,8 +1,8 @@
 solution = (n) => {
   let solution
-  console.log('Input: ' + n)
+  console.log('Input: ', n)
   const binary = n.toString(2)
-  console.log('Binary Representation: ' + binary)
+  console.log('Binary Representation: ', binary)
   const numbers = binary.split('')
   if (!numbers.filter(number => number === '0').length || !numbers.filter(number => number === '1').length) {
     solution = 0
@@ -26,7 +26,7 @@ solution = (n) => {
       }, 0) - 1
     }
   }
-  console.log('Solution: ' + solution)
+  console.log('Solution: ', solution)
 }
 
 solution(1162)
