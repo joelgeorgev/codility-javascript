@@ -1,7 +1,6 @@
 solution = (A) => {
-  let solution
   console.log('Input: ', A)
-  solution = A.reduce((acc, value) => {
+  const solution = A.reduce((acc, value) => {
     acc = acc ^ value
     return acc
   }, 0)
