@@ -1,15 +1,29 @@
 solution = (A) => {
-  const sortedArray = A.slice().sort()
-  const filteredArray = sortedArray.reduce((acc, value, iter) => {
-    if (value === iter + 1) {
-      acc = acc.concat(value)
+  console.log('Input: ', A)
+  let values = {}, solution
+  for (i = 1; i <= A.length; i++) {
+    values[i] = { counter: 0 }
+  }
+  for (i = 0; i < A.length; i++) {
+    if (values[A[i]] !== undefined) {
+      values[A[i]].counter++
+    } else {
+      solution = 0
+      break
     }
-    return acc
-  }, [])
-  const solution = filteredArray.length !== A.length ? 0 : 1
+  }
+  if (solution === undefined) {
+    const filteredArray = A.reduce((acc, value) => {
+      if (values[value] && (values[value].counter === 0 || values[value].counter > 1)) {
+        acc = acc.concat(values[value])
+      }
+      return acc
+    }, [])
+    solution = filteredArray.length ? 0 : 1
+  }
   console.log('Solution: ', solution)
 }
 
 solution([2, 2, 2])
 
-// 75%, 83%, 66%
+// 91%, 100%, 83%
