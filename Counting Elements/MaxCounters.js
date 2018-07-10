@@ -33,8 +33,6 @@ solution = (N, A) => {
 
   for (i = 0; i < counterArray.length; i++) {
     if (counterArray[i] < resetValue) {
-      counterArray[i] = counterArray[i] + (resetValue - counterArray[i])
-    } else if (!counterArray[i]) {
       counterArray[i] = resetValue
     }
   }
