@@ -1,13 +1,12 @@
 solution = (S) => {
   console.log('Input: ', S)
   let counter = 0
-  const letters = S.split('')
-  for (i = 0; i < letters.length; i++) {
-    if (!counter && letters[i] === ')') {
+  for (i = 0; i < S.length; i++) {
+    if (!counter && S.charAt(i) === ')') {
       counter = 1
       break
     }
-    letters[i] === '(' ? counter++ : counter--
+    S.charAt(i) === '(' ? counter++ : counter--
   }
   const solution = counter !== 0 ? 0 : 1
   console.log('Solution: ', solution)
