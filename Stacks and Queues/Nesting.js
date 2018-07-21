@@ -8,7 +8,7 @@ solution = (S) => {
     }
     S.charAt(i) === '(' ? counter++ : counter--
   }
-  const solution = counter !== 0 ? 0 : 1
+  const solution = !counter ? 1 : 0
   console.log('Solution: ', solution)
 }
 
